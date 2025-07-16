@@ -9,3 +9,22 @@ service:
 
 resources: {}
 
+app1:
+  image:
+    repository: nginx
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+  resources: {}
+
+app2:
+  image:
+    repository: redis
+    tag: 7.2
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 6379
+  resources: {}
